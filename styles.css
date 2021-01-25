@@ -130,14 +130,40 @@ body a {
 }
 
 .more {
+  position: relative;
   display: inline-block;
   margin-top: 100px;
   border-radius: 4px;
 }
 
+.more img {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  opacity: 0;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.more img:last-of-type {
+  top: 10px;
+  right: 20px;
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
 .more:hover {
   -webkit-filter: brightness(120%);
           filter: brightness(120%);
+}
+
+.more:hover img {
+  opacity: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -974,6 +1000,26 @@ main {
 }
 
 @media screen and (min-width: 769px) {
+  @-webkit-keyframes rotation {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @keyframes rotation {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
   .Voice .wrapper {
     width: 70%;
   }
@@ -981,6 +1027,10 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .Voice .wrapper .voice-box .voice-icon:hover {
+    -webkit-animation: 0.7s ease-out forwards rotation;
+            animation: 0.7s ease-out forwards rotation;
   }
 }
 
@@ -1008,6 +1058,10 @@ main {
   max-width: 300px;
   margin-top: 100px;
   border-radius: 2px;
+}
+
+.Location .Location-description .school {
+  width: 100%;
 }
 
 .Location .Location-description .school img {
