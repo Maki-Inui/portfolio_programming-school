@@ -131,12 +131,34 @@ body {
 }
 
 .more {
+	position: relative;
 	display: inline-block;
 	margin-top: 100px;
 	border-radius: 4px;
 
+	img {
+		display: block;
+		position: absolute;
+		top:20px;
+		right: 40px;
+		opacity: 0;
+		transform:rotate(-40deg);
+		transition: .3s;
+
+		&:last-of-type {
+			top:10px;
+			right: 20px;
+			transform:rotate(-60deg);
+			transition-delay: .3s;
+		}
+	}
+
 	&:hover {
-		filter: brightness(120%) 
+		filter: brightness(120%);
+
+		img {
+			opacity:1;
+		}
 	}
 }
 
@@ -1072,12 +1094,25 @@ main {
 
 @media screen and (min-width: 769px) {
 	.Voice {
+
+		@keyframes rotation{
+			0%{ transform:rotateX(0);}
+			100%{ transform:rotateY(360deg); }
+		}
 	
 		.wrapper {
 			width: 70%;
 
 			.voice-box {
 				display: flex;
+
+				.voice-icon {
+
+					&:hover {
+						animation:0.7s ease-out forwards rotation;
+					}
+				}
+
 			}
 		}
 	}
@@ -1111,6 +1146,7 @@ main {
 		}
 
 		.school {
+			width: 100%;
 			
 			img {
 				margin-top: 30px;
@@ -1125,8 +1161,10 @@ main {
 			padding: 10px 12px;
 
 			&:hover {
-				filter: brightness(120%) 
+				filter: brightness(120%);
 			}
+
+
 		}
 
 		
