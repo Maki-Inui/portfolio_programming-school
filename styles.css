@@ -970,7 +970,7 @@ main {
 }
 
 .Voice .Voice-description .voice-box .voice-txt {
-  padding: 20px;
+  padding: 16px;
   background-color: #fff;
 }
 
@@ -996,6 +996,14 @@ main {
 @media screen and (max-width: 768px) {
   .Voice .wrapper {
     width: 80%;
+  }
+  .Voice .voice-txt {
+    margin-top: 20px;
+    max-width: 210px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -1027,6 +1035,11 @@ main {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .Voice .wrapper .voice-box .voice-txt {
+    max-height: 200px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .Voice .wrapper .voice-box .voice-icon:hover {
     -webkit-animation: 0.7s ease-out forwards rotation;
