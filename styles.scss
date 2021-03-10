@@ -1052,7 +1052,7 @@ main {
 		.voice-box {
 
 			.voice-txt {
-				padding: 20px;
+				padding: 16px;
 				background-color: #fff;
 
 				h3 {
@@ -1088,6 +1088,14 @@ main {
 		.wrapper {
 			width: 80%;
 		}
+		.voice-txt {
+		margin-top: 20px;
+		max-width: 210px;
+		box-sizing: border-box;
+		margin-right: auto;
+		margin-left: auto;
+		}
+		
 	}
 
 }
@@ -1105,6 +1113,12 @@ main {
 
 			.voice-box {
 				display: flex;
+				
+			.voice-txt {
+				max-height: 200px;
+				box-sizing: border-box;
+				}
+				
 
 				.voice-icon {
 
